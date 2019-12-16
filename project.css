@@ -1,0 +1,39 @@
+body{
+    background-color : #FFF;
+    color: #000;
+    font-family: "Times New Roman", Times, serif;
+    font-size: large;
+}
+h1{
+    height: 100px;
+    background-image: url(logo.jpeg);
+    color: gainsboro;
+}
+table{
+    width: 500px;
+    border-collapse: collapse;
+    table-layout: fixed;
+}
+td{
+    vertical-align: top;
+    padding: 5px;
+    word-wrap: break-word;
+}
+#college, #intern, #dob, #name, #dad, #mail, #phone{
+    width: 300px;
+}
+/* #submit{
+    width: 500px;
+    text-align: center;
+} */
+.label_col{
+    text-align: right;
+}
+.input_col{
+    text-align: left;
+    width: 300px;
+}
+#essay{
+    height: 200px;
+    width: 300px;
+}

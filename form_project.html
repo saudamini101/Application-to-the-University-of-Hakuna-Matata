@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Project Hakuna Matata</title>
+    
+    <link rel = "stylesheet" type="text/css" href="project.css">
+
+    <script type ="text/javascript">
+
+//checks if the number is 10 digit long, along with the hyphens.
+        function checkForNumber(){
+            var phone = document.getElementById("phone").value;
+            if(phone.length != 12){
+                 alert("That's an invalid number, enter the 10 digit number(12 with the hyphens) please");
+                return false;
+            }
+        }
+//to select only two
+        function onlyOneCheckBox() {
+	        var checkboxgroup = document.getElementById('checkboxgroup').getElementsByTagName("input");
+    	    var limit = 2;
+	        for (var i = 0; i < checkboxgroup.length; i++) {
+		        checkboxgroup[i].onclick = function() {
+			    var checkedcount = 0;
+				for (var i = 0; i < checkboxgroup.length; i++) {
+				    checkedcount += (checkboxgroup[i].checked) ? 1 : 0;
+			    }
+			    if (checkedcount > limit) {
+				    //console.log("You can only select a maximum of " + limit + " checkboxes");
+				    alert("You can select maximum of " + limit + " checkbox.");
+				    this.checked = false;
+			    }
+		        }
+	        }
+        }
+
+    </script>
+</head> 
+<body>
+<form action = "mySubmitPage.html" method = "post" onsubmit = "return checkForNumber();">
+    <h1>University of <br>Hakuna Matata</h1>
+    <h4> Application for Masters in Engineering</h4>
+    <table border = "0">
+        <tr>
+            <td class = "label_col">Name : </td>
+            <td class = "input_col"><input name = "name" id = "name" type = "text" placeholder="Harry Potter" required></td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Father's Name : </td>
+            <td class = "input_col"><input name = "dad" id = "dad" type = "text" placeholder="James Potter" required></td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Gender : </td>
+            <td class = "input_col">
+                <input type="radio" name="gender" value="male" checked> Male
+                <input type="radio" name="gender" value="female"> Female
+                <input type="radio" name="gender" value="other"> Other
+            </td>
+        </tr>
+        
+        <tr>
+            <td class = "label_col">Date Of Birth : </td>
+            <td class = "input_col"><input type = "date" name = "dob" id = "dob" required></td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Email ID : </td>
+            <td class = "input_col"><input type = "email" id = "mail" name ="mail" placeholder="harry@potter.com" required><br></td>
+        </tr>  
+
+        <tr>
+            <td class = "label_col">Phone Number : </td>
+            <td class = "input_col"><input name = "phone" id = "phone" type = "text" placeholder="1234-5678-90" required></td>
+        </tr> 
+
+        <tr>
+            <td class = "label_col">GPA in College : </td>
+            <td class = "input_col"><input name = "college" id = "college" type = "text" required></td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Previous internships : </td>
+            <td class = "input_col"><input name = "intern" id = "intern" type = "text" ></td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Branch preferences : (select max two)</td>
+            <td class = "input_col"><div id="checkboxgroup">
+                <input type = "checkbox" name = "check" id = "CSE" checked>Industrial Engineering<br>
+                <input type = "checkbox" name = "check" id = "EEE">Electrical Engineering <br>
+                <input type = "checkbox" name = "check" id = "ME">Mechanical Engineering<br>
+                <input type = "checkbox" name = "check" id = "CE">Civil Engineering <br>
+            </div>
+            <script type="text/javascript">
+                onlyOneCheckBox()
+            </script>
+            </td>
+        </tr>
+
+        <tr>
+            <td class = "label_col">Why Hakuna Matata University? </td>
+            <td class = "input_col"><textarea id = "essay" name ="essay" placeholder="max 1000 words" required></textarea></td>
+        </tr>
+        <tr>
+            <td class = "label_col"></td>
+            <td class = "input_col"><button value="submit" id="submit" onclick="add_update(event);">Submit your form</button></td>
+        </tr>
+        <tr>
+            <td class = "label_col">For more information</td>
+            <td class = "input_col">on the uni, click our logo : <a href = "https://en.wikipedia.org/wiki/Hakuna_matata"><img src="hakuna.jpg"
+                 style = "margin: 10px; float:right" width = "80" height = "60"/></a></td>
+        </tr>
+    </table>  
+</form>
+</body>    
+</html>
